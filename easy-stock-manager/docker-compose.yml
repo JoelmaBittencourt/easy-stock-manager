@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  oracle-server-db:
+    container_name: oracle19c
+    image: gvenzl/oracle-xe
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: "123456"
+      ORACLE_SERVICE_NAME: "XE"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+volumes:
+  oracle_data:
